@@ -15,33 +15,35 @@ export class AppComponent {
   @ViewChild('responseElement') responseElement : ElementRef;
   private videoStream: MediaStream;
   private wait = false;
+  public aiResponse = '';
 
   constructor(private socket: Socket) {}
 
   ngOnInit(): void {
     this.startCapture();
-    this.socket.emit('chat_message', 'Test');
     this.socket.on('frame', (data: string) => {
       let result = JSON.parse(data);
       if (result.length > 0) {
-        console.log(result[0]);
         for (let i = 0; i < result.length; i++) {
-           
+          this.aiResponse += result[i].name;
         }
       }
       this.wait = false;
     });
   }
-
+  
+  
   startCapture(): void {
     navigator.mediaDevices
-      .getUserMedia({ video: true })
-      .then((stream) => {
-        this.videoStream = stream;
-        this.videoElement.nativeElement.srcObject = stream;
-        setInterval(() => {
+    .getUserMedia({ video: true })
+    .then((stream) => {
+      this.videoStream = stream;
+      this.videoElement.nativeElement.srcObject = stream;
+      setInterval(() => {
+        if (this.socket.ioSocket.connected) {
           this.convert();
-        }, 500);
+        }
+      }, 500);
       })
       .catch((error) => {
         console.error('Error accessing webcam:', error);
