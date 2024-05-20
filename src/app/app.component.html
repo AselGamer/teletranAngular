@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,4 +10,110 @@
   <canvas #canvasElement hidden></canvas>
   <div class="response"><p>{{ aiResponse }}</p></div>
 </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teletran</title>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar-title">Teletran</div>
+    <div class="navbar-buttons">
+      <a href="#about" class="nav-button">Sobre Nosotros</a>
+      <a href="#project" class="nav-button">Sobre el proyecto</a>
+    </div>
+  </header>
+
+  <section class="main-section">
+    <div class="intro-container">
+      <div class="intro">
+        <p class="intro-text">¡Bienvenidos a Teletrean! </p>
+        <p class="intro-text">Acepte el uso de la webcam para empezar. </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="webcam-container">
+        <video #videoElement autoplay playsInline muted></video>
+        <canvas #canvasElement hidden></canvas>
+      </div>
+      <div class="text-container">
+        <p id="generated-text">{{ aiResponse }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-main">
+      <h2>Quienes somos</h2>
+      <p>Somos un grupo de tres apasionados estudiantes del Centro de Estudios Almi con una visión compartida: hacer que
+        la comunicación sea más accesible para todos. Nuestra misión es utilizar la tecnología de inteligencia
+        artificial para romper barreras lingüísticas y facilitar la comunicación entre personas con discapacidad
+        auditiva y aquellas que no conocen el lenguaje de señas.</p>
+    </div>
+    <div class="about-team">
+      <div class="team-member">
+        <h4>Asel Fernandez</h4>
+        <p>Motivados por la creciente necesidad de mejorar la accesibilidad y la comunicación
+          para personas con discapacidades auditivas, nuestro equipo se ha propuesto desarrollar
+        </p>
+      </div>
+      <div class="team-member">
+        <h4>Lucia Caselles</h4>
+        <p>Motivados por la creciente necesidad de mejorar la accesibilidad y la comunicación para personas con d
+          iscapacidades auditivas, nuestro equipo se ha propuesto desarrollar una página web innovadora.
+        </p>
+      </div>
+      <div class="team-member">
+        <h4>Iker Gartzia</h4>
+        <p>Motivados por la creciente necesidad de mejorar la accesibilidad y la comunicación para personas con
+          discapacidades auditivas, nuestro equipo se ha propuesto desarrollar una página web innovadora.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="project">
+    <div class="project-main">
+      <h2>Sobre el Proyecto</h2>
+      <p class="p-project-main">Motivados por la creciente necesidad de mejorar la accesibilidad y la comunicación para
+        personas con discapacidades auditivas,
+        nuestro equipo se ha propuesto desarrollar una página web innovadora. Esta plataforma contará con una
+        inteligencia artificial
+        implementada que permitirá la traducción instantánea del lenguaje de señas al verbal en tiempo real.
+        Reconociendo la falta de
+        herramientas efectivas en este campo, nuestra iniciativa busca proporcionar una solución práctica y
+        significativa para mejorar
+        la inclusión y la interacción diaria de las personas con discapacidades auditivas. </p>
+      <div class="project-row">
+        <img src="/assets/fotosignos.jpg" alt="Imagen con el lenguaje de signos " class="project-image">
+        <div class="project-text">
+          <p>La traducción simultánea del lenguaje de señas tiene el potencial de mejorar significativamente la
+            accesibilidad y
+            la inclusión para personas con discapacidades auditivas. Este enfoque innovador puede marcar la diferencia
+            en el
+            día a día de quienes utilizan este lenguaje.
+          </p>
+        </div>
+      </div>
+      <div class="project-row reverse">
+        <img src="/assets/hablando.jpg" alt="Dos personas hablando por lenguajed de señas" class="project-image">
+        <div class="project-text">
+          <p>Aunque descartamos otras propuestas, como un programa para detectar la cantidad de comida en
+            el bol de mascotas para controlar su alimentación y la monitorización de personas mayores con
+            dependencia para garantizar su seguridad, reconocemos la valía de estas ideas. La detección de
+            alimentos para mascotas y la monitorización de personas mayores son áreas importantes donde la
+            inteligencia artificial puede hacer contribuciones significativas para mejorar la calidad de vida.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+
 </html>

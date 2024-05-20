@@ -5,7 +5,7 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { RouterOutlet } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
+const config: SocketIoConfig = { url: 'http://54.92.241.115:5000', options: {} };
 
 @NgModule({
   declarations: [AppComponent],

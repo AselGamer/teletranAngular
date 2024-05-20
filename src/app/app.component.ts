@@ -59,6 +59,7 @@ export class AppComponent {
     canvas.width = 200;
     canvas.height = 200;
     canvas.getContext('2d').drawImage(video, 0, 0, 200, 200);
+    console.log(canvas.toDataURL());
     this.socket.emit('frame', canvas.toDataURL());
     this.wait = true;
   }
