@@ -38,9 +38,9 @@
     </div>
     <div class="container">
       <div class="webcam-container">
-        <video #videoElement autoplay playsInline muted></video>
-        <canvas #canvasElement hidden></canvas>
+        <video #videoElement autoplay playsInline muted style='border-radius: 40px; object-fit: fill;'></video>
       </div>
+      <canvas #canvasElement hidden></canvas>
       <div class="text-container">
         <p id="generated-text">{{ aiResponse }}</p>
       </div>

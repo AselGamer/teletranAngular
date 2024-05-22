@@ -22,10 +22,13 @@ export class AppComponent {
   ngOnInit(): void {
     this.startCapture();
     this.socket.on('frame', (data: string) => {
-      let result = JSON.parse(data);
-      if (result.length > 0) {
-        for (let i = 0; i < result.length; i++) {
-          this.aiResponse += result[i].name;
+      console.log(data);
+      if (data != '[]') {
+        let result = JSON.parse(data);
+        if (result.length > 0) {
+          for (let i = 0; i < result.length; i++) {
+            this.aiResponse += result[i].name;
+          }
         }
       }
       this.wait = false;
@@ -50,7 +53,7 @@ export class AppComponent {
       });
   }
 
-  convert() {
+  async convert() {
     if (this.wait) {
       return;
     }
@@ -59,8 +62,7 @@ export class AppComponent {
     canvas.width = 200;
     canvas.height = 200;
     canvas.getContext('2d').drawImage(video, 0, 0, 200, 200);
-    console.log(canvas.toDataURL());
-    this.socket.emit('frame', canvas.toDataURL());
+    await this.socket.emit('frame', canvas.toDataURL());
     this.wait = true;
   }
 }
